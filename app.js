@@ -1,6 +1,3 @@
-var ele=document.body.querySelector(".dragon");
-
-var userPoints =0;
 
 var dragonPoints =0;
 
@@ -18,21 +15,19 @@ while (i <= hits){
         dragonPoints += 1;
     else
         dragonPoints += dragonDamage;
-
-
     userDamage= Math.floor((Math.random) *2 +1);
-
     userPoints += userDamage;
+    if (userPoints >= 5) {
+        ele.innerHTML="User Lost"
+    }
+    if (dragonPoints >= 10) {
+        ele.innerHTML="User win"
+    }
 
     i++;
 
 }
-if (userPoints >= 5) {
-    ele.innerHTML="User Lost"
-}
-if (dragonPoints >= 10) {
-    ele.innerHTML="User win"
-}
-
+if (dragonPoints < 10)
+    ele.innerHTML="Dragon win"
 
 
